@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input{
+            padding: 0.5em;
+        }
+
+        .btn{
+            padding: 0.5em 3em;    
+            background-color: #6200ee; 
+            color: white;
+            border-radius: 8px;
+
+          }
+          .btn:hover{
+            background-color: #813edf; 
+
+
+          }
+          .buttons{
+              padding: 1em;
+          }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+    <h3>Number 1</h3>
+    <div>
+        <input type="text" id="number1">
+    </div>
+    <h3>Number 2</h3>
+
+    <div>
+        <input type="text" id="number2">
+    </div>
+
+    <div class="buttons">
+    <button id="and_btn" class="btn">And</button>
+    <button id="or_btn" class="btn">Or</button>
+    <button id="xor_btn" class="btn">XOR</button>
+</div>
+
+<div class="answer">
+    answer:
+</div>
+</div>
+<script>
+    let number_one=document.querySelector("#number1")
+    let number_two=document.querySelector("#number2")
+
+    let andBtn=document.querySelector("#and_btn");
+    let orBtn=document.querySelector("#or_btn");
+    let xorBtn=document.querySelector("#xor_btn");
+
+    let ans=document.querySelector(".answer")
+    andBtn.addEventListener("click",()=>{
+        let num1=number_one.value;
+        let num2=number_two.value;
+
+        let temp=num1&num2;
+        ans.innerHTML="answer: "+temp;
+    })
+
+    orBtn.addEventListener("click",()=>{
+        let num1=number_one.value;
+        let num2=number_two.value;
+
+        let temp=num1|num2;
+        ans.innerHTML="answer: "+temp;
+    })
+    
+    xorBtn.addEventListener("click",()=>{
+        let num1=number_one.value;
+        let num2=number_two.value;
+
+        let temp=num1^num2;
+        ans.innerHTML="answer: "+temp;
+    })
+</script>
+</body>
+</html>
